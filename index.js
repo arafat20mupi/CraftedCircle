@@ -5,11 +5,10 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const connectDB = require("./Config/dbConfig");
 const userRouter = require("./User/UserRoute");
-
+const JobRoute = require("./Jobs/JobsRoute");
 require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
-app.use('/api',userRouter);
 // Body parser middleware to parse JSON request bodies
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +27,14 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello Developer");
 });
+
+
+
+
+
+app.use('/api',userRouter);
+app.use('/api',JobRoute);
+
 
 // Server listening
 const PORT = process.env.PORT || 5000;
