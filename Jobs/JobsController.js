@@ -16,7 +16,7 @@ exports.createJobs = async (req, res) => {
       message: "Failed to create job listing",
       error: error.message,
     });
-  }
+  } 
 };
 
 // Get All
