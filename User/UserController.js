@@ -21,8 +21,8 @@ exports.getUserById = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    const user = new User({ name, email, password });
+    const { name, email, password, uid } = req.body;
+    const user = new User({ name, email, password, uid });
     await user.save();
 
     res.status(201).json({
