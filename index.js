@@ -7,6 +7,8 @@ const connectDB = require("./Config/dbConfig");
 const userRouter = require("./User/UserRoute");
 const JobRoute = require("./Jobs/JobsRoute");
 const postRoute=require("./Post/postRoute")
+const CommentRoute=require("./Comment/CommentRoute")
+const LikeRoute=require("./Like/LikeRoute")
 require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -36,6 +38,9 @@ app.get("/", (req, res) => {
 app.use('/api',userRouter);
 app.use('/api',JobRoute);
 app.use('/api',postRoute);
+app.use('/api',CommentRoute);
+app.use('/api',LikeRoute);
+
 
 
 // Server listening
