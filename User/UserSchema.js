@@ -10,10 +10,17 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     work: [{ type: String }],
-    education: [{ type: String }],
+    education: [
+      {
+        educationLevel:{type: String},
+        insName: { type: String },
+        session: { type: String },
+        GPA: { type: String }, 
+      },
+    ],
     skill: [{ type: String }],
     contactNum: { type: Number },
-    uid: { type: String},
+    uid: { type: String },
     link: {
       github: { type: String },
       linkedin: { type: String },
