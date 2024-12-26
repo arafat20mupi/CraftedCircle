@@ -13,6 +13,8 @@ const postSchema = new mongoose.Schema(
       {
         text: { type: String, required: true },
         commentEmail: { type: String, required: true },
+        commentPhoto: { type: String, required: true },
+        commentName: { type: String, required: true },
         createdAt: { type: Date, default: Date.now },
       }
     ],
