@@ -11,14 +11,19 @@ const postSchema = new mongoose.Schema(
     video: { type: String },
     comment: [
       {
-        text: { type: String, required: true },
-        commentEmail: { type: String, required: true },
-        commentPhoto: { type: String, required: true },
-        commentName: { type: String, required: true },
+        text: { type: String, },
+        commentEmail: { type: String, },
+        commentPhoto: { type: String, },
+        commentName: { type: String, },
         createdAt: { type: Date, default: Date.now },
       }
     ],
-    like: [{ type: Number }],
+    like: [{
+      likeEmail: { type:String, },
+      likePhoto: { type:String, },
+      likeName: { type:String, },
+      like:{type:String}
+    }],
   },
   { timestamps: true }
 );
