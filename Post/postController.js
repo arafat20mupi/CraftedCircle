@@ -72,7 +72,7 @@ exports.addComment = async (req, res) => {
       // Check if the user has already liked the post
       const alreadyLiked = post.like.some((like) => like.likeEmail === likeEmail);
       if (alreadyLiked) {
-        return res.status(400).send({ message: "User has already liked this post" });
+       post.like.$pop(like);
       }
       
       // Add the like to the post
