@@ -34,8 +34,7 @@ exports.getUserByEmail = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   try {
-    const { name, email, profileImg, uid ,password} = req.body;
-
+    const { name, email, profileImg, uid } = req.body;
     // Validate input
     if (!name || !email || !uid || !profileImg) {
       return res.status(400).json({ error: "All fields are required" });
