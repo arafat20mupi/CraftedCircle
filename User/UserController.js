@@ -31,12 +31,11 @@ exports.getUserByEmail = async (req, res) => {
   }
 };
 
-
 exports.createUser = async (req, res) => {
   try {
-    const { name, email, profileImg, uid } = req.body;
+    const { name, email, profileImg, uid , password } = req.body;
     // Validate input
-    if (!name || !email || !uid || !profileImg) {
+    if (!name || !email || !uid || !profileImg || !password) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
@@ -62,7 +61,6 @@ exports.createUser = async (req, res) => {
     });
   }
 };
-
 
 exports.updateUser = async (req, res) => {
   try {
