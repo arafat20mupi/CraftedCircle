@@ -18,7 +18,7 @@ exports.createPost = async (req, res) => {
 };
 exports.getPost = async(req, res) => {
     try {
-        const post = await postSchema.find()
+        const post = await postSchema.find().sort({ createdAt: -1 });
         res.status(200).send({ post })
     } catch(error) {
         res.status(500).send({ message: "Error fetching post", error });
@@ -89,4 +89,3 @@ exports.addComment = async (req, res) => {
       res.status(500).send({ message: "Error adding like", error });
     }
   };
-  
