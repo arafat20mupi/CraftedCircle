@@ -8,6 +8,7 @@ exports.getUsers = async (req, res) => {
     res.status(500).json({ message: "Error fetching users", error });
   }
 };
+
 exports.getUserByEmail = async (req, res) => {
   try {
     const { email } = req.params;
@@ -93,3 +94,5 @@ exports.updateUser = async (req, res) => {
     });
   }
 };
+
+
